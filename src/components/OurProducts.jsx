@@ -5,17 +5,17 @@ import Icon3 from "../assets/images/loans.png";
 const neon = "#C7FF00";
 const products = [
   {
-    icon: <img src={Icon1} alt="Checking Accounts" style={{ width: 72, height: 72 }} />,
+    icon: <img src={Icon1} alt="Checking Accounts" className="w-16 h-16 md:w-20 md:h-20" />,
     title: "Checking Accounts",
     desc: "Enjoy easy and convenient access to your funds with our range of checking account options. Benefit from features such as online and mobile banking, debit cards, and free ATM access.",
   },
   {
-    icon: <img src={Icon2} alt="Savings Accounts" style={{ width: 72, height: 72 }} />,
+    icon: <img src={Icon2} alt="Savings Accounts" className="w-16 h-16 md:w-20 md:h-20" />,
     title: "Savings Accounts",
     desc: "Build your savings with our competitive interest rates and flexible savings account options. Whether you're saving for a specific goal or want to grow your wealth over time, we have the right account for you.",
   },
   {
-    icon: <img src={Icon3} alt="Loans and Mortgages" style={{ width: 72, height: 72 }} />,
+    icon: <img src={Icon3} alt="Loans and Mortgages" className="w-16 h-16 md:w-20 md:h-20" />,
     title: "Loans and Mortgages",
     desc: "Realize your dreams with our flexible loan and mortgage options. From personal loans to home mortgages, our experienced loan officers are here to guide you through the application process and help you secure the funds you need.",
   },
@@ -65,25 +65,25 @@ const OurProducts = () => {
           </div>
         </div>
         {/* Products */}
-        <div className="grid md:grid-cols-3 gap-0 bg-transparent">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 bg-transparent">
           {products.map((p, i) => (
             <div
               key={i}
-              className={`flex flex-col items-center text-center px-8 py-12`}
+              className={`flex flex-col items-center text-center px-4 py-8 md:px-8 md:py-12 w-full transition-all duration-300 hover:scale-105 hover:shadow-2xl group animate-slide-in-up`}
               style={{
                 background: "transparent",
-                borderRight: i < 2 ? "1px solid #232425" : "none",
+                borderRight: i < 2 && window.innerWidth >= 768 ? "1px solid #232425" : "none",
                 borderLeft: "none",
                 borderTop: "none",
                 borderBottom: "none",
-                minHeight: 340,
+                minHeight: 240,
               }}
             >
-              <div className="mb-6 flex items-center justify-center">
+              <div className="mb-4 flex items-center justify-center">
                 {p.icon}
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">{p.title}</h3>
-              <p className="text-gray-300 text-base">{p.desc}</p>
+              <h3 className="text-lg md:text-xl font-semibold text-white mb-2 md:mb-3">{p.title}</h3>
+              <p className="text-gray-300 text-sm md:text-base">{p.desc}</p>
             </div>
           ))}
         </div>
@@ -93,4 +93,4 @@ const OurProducts = () => {
 };
 
 export default OurProducts;
-             
+

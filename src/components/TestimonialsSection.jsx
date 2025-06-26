@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import QuoteIcon from "../assets/images/IconOT.png"; // Đường dẫn tới icon bạn vừa gửi
+import QuoteIcon from "../assets/images/IconOT.png";
 const neon = "#C7FF00";
 const testimonials = [
   {
@@ -26,31 +26,40 @@ const TestimonialsSection = () => {
   const [activeIndex, setActiveIndex] = useState(1);
 
   // Hiệu ứng chuyển đổi
-  const handlePrev = () => setActiveIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
-  const handleNext = () => setActiveIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+  const handlePrev = () =>
+    setActiveIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+  const handleNext = () =>
+    setActiveIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+
+  // Lấy chỉ số của 3 card cần hiển thị trên desktop
+  const getDesktopIndexes = () => {
+    const prev = (activeIndex - 1 + testimonials.length) % testimonials.length;
+    const next = (activeIndex + 1) % testimonials.length;
+    return [prev, activeIndex, next];
+  };
 
   return (
-    <section className="max-w-7xl mx-auto py-16 px-4">
-      <h2 className="text-4xl font-bold text-white mb-2">
+    <section className="max-w-7xl mx-auto py-8 md:py-10 lg:py-8 px-2 sm:px-4">
+      <h2 className="text-2xl md:text-4xl font-bold text-white mb-2 md:mb-2 lg:mb-1">
         Our <span style={{ color: neon }}>Testimonials</span>
       </h2>
-      <p className="text-gray-300 mb-8">
+      <p className="text-gray-300 mb-6 md:mb-8 lg:mb-6 text-sm md:text-base">
         Discover how YourBank has transformed lives with innovative digital solutions and personalized customer service. See why our clients trust us for a secure and prosperous financial journey
       </p>
       {/* Tabs */}
-      <div className="flex gap-0 mb-12">
+      <div className="flex gap-0 mb-6 md:mb-8 lg:mb-6">
         <div className="flex gap-0 bg-[#232425] rounded-full p-1 w-max">
           {tabs.map((tab, idx) => (
             <button
               key={tab.label}
               onClick={() => setActiveTab(idx)}
-              className={`px-7 py-2 rounded-full text-base font-semibold transition-all duration-200
+              className={`px-4 md:px-7 py-2 rounded-full text-base font-semibold transition-all duration-200
                 ${activeTab === idx
                   ? "bg-[#C7FF00] text-[#181A1B] shadow"
                   : "bg-transparent text-white hover:text-[#C7FF00]"
                 }`}
               style={{
-                minWidth: 140,
+                minWidth: 90,
                 outline: "none",
                 border: "none",
               }}
@@ -65,7 +74,7 @@ const TestimonialsSection = () => {
         {/* Left Arrow */}
         <button
           onClick={handlePrev}
-          className="absolute left-0 z-10 w-10 h-10 rounded-full bg-[#232425] flex items-center justify-center text-[#C7FF00] hover:bg-[#C7FF00] hover:text-[#232425] transition"
+          className="absolute left-0 z-10 w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#232425] flex items-center justify-center text-[#C7FF00] hover:bg-[#C7FF00] hover:text-[#232425] transition"
           aria-label="Previous"
         >
           <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
@@ -74,46 +83,75 @@ const TestimonialsSection = () => {
           </svg>
         </button>
         {/* Testimonials */}
-        <div className="flex gap-8 w-full justify-center">
-          {testimonials.map((t, i) => {
-            // Hiệu ứng mờ dần và scale cho các card không active
-            let opacity = 0.3, scale = 0.95, filter = "blur(1.5px)";
-            if (i === activeIndex) {
-              opacity = 1;
-              scale = 1;
-              filter = "none";
-            } else if (i === (activeIndex + 1) % testimonials.length || i === (activeIndex - 1 + testimonials.length) % testimonials.length) {
-              opacity = 0.7;
-              scale = 0.98;
-              filter = "blur(0.5px)";
-            }
-            return (
-              <div
-                key={i}
-                className="rounded-2xl bg-[#181A1B] border border-[#232425] p-8 w-[350px] flex flex-col items-center text-center transition-all duration-500"
-                style={{
-                  opacity,
-                  transform: `scale(${scale})`,
-                  filter,
-                  zIndex: i === activeIndex ? 2 : 1,
-                  boxShadow: i === activeIndex ? "0 4px 32px #C7FF0033" : "none",
-                  position: "relative",
-                }}
-              >
-                {/* Quote Icon */}
-                <img src={QuoteIcon} alt="quote" className="mb-4" style={{ width: 44, height: 44 }} />
-                <p className={`mb-4 ${i === activeIndex ? "text-white font-semibold" : "text-gray-400"}`} style={{ minHeight: 100 }}>
-                  {t.quote}
-                </p>
-                <span className={`font-semibold ${i === activeIndex ? "text-[#C7FF00]" : "text-gray-500"}`}>{t.name}</span>
-              </div>
-            );
-          })}
+        <div className="flex gap-2 md:gap-6 lg:gap-4 w-full justify-center">
+          {/* Mobile: chỉ hiển thị 1 card */}
+          <div className="flex md:hidden w-full justify-center">
+            {testimonials.map((t, i) =>
+              i === activeIndex ? (
+                <div
+                  key={i}
+                  className="rounded-2xl bg-[#181A1B] border border-[#232425] p-5 w-[90vw] max-w-[350px] flex flex-col items-center text-center transition-all duration-500 ease-in-out animate-slide-in-up"
+                  style={{
+                    opacity: 1,
+                    transform: "scale(1)",
+                    filter: "none",
+                    zIndex: 2,
+                    boxShadow: "0 4px 32px #C7FF0033",
+                    position: "relative",
+                  }}
+                >
+                  <img src={QuoteIcon} alt="quote" className="mb-4 transition-transform duration-500 group-hover:scale-110" style={{ width: 44, height: 44 }} />
+                  <p className="mb-4 text-white font-semibold transition-colors duration-500" style={{ minHeight: 100 }}>
+                    {t.quote}
+                  </p>
+                  <span className="font-semibold text-[#C7FF00] transition-colors duration-500">{t.name}</span>
+                </div>
+              ) : null
+            )}
+          </div>
+          {/* Desktop: hiển thị 3 card */}
+          <div className="hidden md:flex w-full justify-center">
+            {getDesktopIndexes().map((idx, pos) => {
+              // pos: 0 = left, 1 = center, 2 = right
+              let opacity = 0.3, scale = 0.95, filter = "blur(1.5px)";
+              let extraClass = "";
+              if (pos === 1) {
+                opacity = 1;
+                scale = 1;
+                filter = "none";
+                extraClass = "hover:scale-105 hover:shadow-2xl";
+              } else {
+                opacity = 0.7;
+                scale = 0.98;
+                filter = "blur(0.5px)";
+              }
+              return (
+                <div
+                  key={idx}
+                  className={`rounded-2xl bg-[#181A1B] border border-[#232425] p-8 w-[350px] flex flex-col items-center text-center transition-all duration-500 ease-in-out ${extraClass} group animate-slide-in-up`}
+                  style={{
+                    opacity,
+                    transform: `scale(${scale})`,
+                    filter,
+                    zIndex: pos === 1 ? 2 : 1,
+                    boxShadow: pos === 1 ? "0 4px 32px #C7FF0033" : "none",
+                    position: "relative",
+                  }}
+                >
+                  <img src={QuoteIcon} alt="quote" className="mb-4 transition-transform duration-500 group-hover:scale-110" style={{ width: 44, height: 44 }} />
+                  <p className={`mb-4 ${pos === 1 ? "text-white font-semibold" : "text-gray-400"} transition-colors duration-500`} style={{ minHeight: 100 }}>
+                    {testimonials[idx].quote}
+                  </p>
+                  <span className={`font-semibold ${pos === 1 ? "text-[#C7FF00]" : "text-gray-500"} transition-colors duration-500`}>{testimonials[idx].name}</span>
+                </div>
+              );
+            })}
+          </div>
         </div>
         {/* Right Arrow */}
         <button
           onClick={handleNext}
-          className="absolute right-0 z-10 w-10 h-10 rounded-full bg-[#232425] flex items-center justify-center text-[#C7FF00] hover:bg-[#C7FF00] hover:text-[#232425] transition"
+          className="absolute right-0 z-10 w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#232425] flex items-center justify-center text-[#C7FF00] hover:bg-[#C7FF00] hover:text-[#232425] transition"
           aria-label="Next"
         >
           <svg width="20" height="20" fill="none" viewBox="0 0 20 20">

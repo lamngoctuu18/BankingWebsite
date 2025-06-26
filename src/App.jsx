@@ -21,7 +21,7 @@ function App() {
     <Router>
       <div className="bg-[#181A1B] min-h-screen font-sans">
         <Header />
-        <main className="p-4">
+        <main className="mt-8 md:mt-12 px-4">
           <Routes>
             <Route
               path="/"

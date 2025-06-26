@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Animation for fade-in */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.7s cubic-bezier(0.4,0,0.2,1) both;
+  }
+  .animate-slide-in-up {
+    animation: slideInUp 0.7s cubic-bezier(0.4,0,0.2,1) both;
+  }
+  .animate-slide-in-left {
+    animation: slideInLeft 0.7s cubic-bezier(0.4,0,0.2,1) both;
+  }
+  .animate-slide-in-right {
+    animation: slideInRight 0.7s cubic-bezier(0.4,0,0.2,1) both;
+  }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(24px) scale(0.98);}
+  to { opacity: 1; transform: translateY(0) scale(1);}
+}
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(48px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-48px);}
+  to { opacity: 1; transform: translateX(0);}
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(48px);}
+  to { opacity: 1; transform: translateX(0);}
+}

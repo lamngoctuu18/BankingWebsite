@@ -53,23 +53,23 @@ const OurFeatures = () => {
 	const [active, setActive] = useState(0);
 
 	return (
-		<section className="max-w-7xl mx-auto py-16 px-4">
-			<h2 className="text-4xl font-bold text-white mb-2">
+		<section className="max-w-7xl mx-auto py-10 md:py-16 px-2 sm:px-4">
+			<h2 className="text-2xl md:text-4xl font-bold text-white mb-2">
 				Our <span style={{ color: neon }}>Features</span>
 			</h2>
-			<p className="text-gray-300 mb-10 max-w-3xl">
+			<p className="text-gray-300 mb-6 md:mb-10 max-w-3xl text-sm md:text-base">
 				Experience a host of powerful features at YourBank, including seamless
 				online banking, secure transactions, and personalized financial insights,
 				all designed to enhance your banking experience
 			</p>
-			<div className="flex flex-col md:flex-row gap-8">
+			<div className="flex flex-col md:flex-row gap-6 md:gap-8">
 				{/* Tabs */}
-				<div className="flex flex-col gap-4 w-full md:w-64">
+				<div className="flex flex-row md:flex-col gap-2 md:gap-4 w-full md:w-64 mb-4 md:mb-0">
 					{features.map((f, i) => (
 						<button
 							key={i}
 							onClick={() => setActive(i)}
-							className={`rounded-full px-6 py-3 text-left font-semibold transition-all duration-200 border-none outline-none
+							className={`rounded-full px-4 md:px-6 py-2 md:py-3 text-left font-semibold transition-all duration-200 border-none outline-none
                 ${
 					active === i
 						? "bg-[#232425] text-[#C7FF00] shadow"
@@ -87,11 +87,11 @@ const OurFeatures = () => {
 					))}
 				</div>
 				{/* Feature Cards */}
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-1">
+				<div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 flex-1">
 					{featureCards.map((card, idx) => (
 						<div
 							key={idx}
-							className="rounded-2xl bg-[#232425] p-7 flex flex-col justify-between min-h-[170px] border border-[#232425] hover:border-[#C7FF00] transition group"
+							className="rounded-2xl bg-[#232425] p-5 md:p-7 flex flex-col justify-between min-h-[140px] md:min-h-[170px] border border-[#232425] hover:border-[#C7FF00] transition group"
 							style={{
 								boxShadow: "0 2px 16px #0004",
 							}}

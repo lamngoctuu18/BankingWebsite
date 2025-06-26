@@ -7,41 +7,54 @@ import IconBusiness1 from "../assets/images/Startups.png";
 import IconBusiness2 from "../assets/images/CashFlow.png";
 import IconBusiness3 from "../assets/images/BusinessExpansion.png";
 import IconBusiness4 from "../assets/images/Payment.png";
-
+import AbstractDesign from "../assets/images/Abstract Design.png"; 
+import AbstractDesign2 from "../assets/images/Abstract Design (1).png"; 
 const neon = "#C7FF00";
 
 const UseCase = () => (
-  <section className="max-w-7xl mx-auto py-16 px-4">
-    <h2 className="text-4xl font-bold text-white mb-2">
+  <section className="max-w-7xl mx-auto py-8 md:py-10 lg:py-8 px-2 sm:px-4">
+    <h2 className="text-2xl md:text-4xl font-bold text-white mb-2 md:mb-2 lg:mb-1">
       Use <span style={{ color: neon }}>Cases</span>
     </h2>
-    <p className="text-gray-300 mb-10">
+    <p className="text-gray-300 mb-6 md:mb-8 lg:mb-6 text-sm md:text-base">
       At YourBank, we cater to the diverse needs of individuals and businesses alike, offering a wide range of financial solutions
     </p>
-    <div className="flex flex-col gap-12">
+    <div className="flex flex-col gap-6 md:gap-8 lg:gap-6">
       {/* For Individuals */}
-      <div className="flex flex-col md:flex-row gap-8">
+      <div className="flex flex-col md:flex-row gap-3 md:gap-4 lg:gap-3">
         {/* Left: Cards */}
-        <div className="flex-1 bg-[#181A1B] rounded-2xl p-8 grid grid-cols-2 gap-6 shadow-lg border border-[#232425]">
-          <div className="flex flex-col items-center justify-center bg-[#232425] rounded-xl py-8 shadow group hover:bg-[#232425]/80 transition">
-            <img src={IconPersonal1} alt="" className="w-10 h-10 mb-4" />
-            <span className="text-white font-medium text-base">Managing Personal Finances</span>
+        <div className="relative flex-1 bg-[#181A1B] rounded-2xl p-4 md:p-6 lg:p-4 grid grid-cols-2 gap-2 md:gap-3 lg:gap-2 shadow-lg border border-[#232425] animate-slide-in-left">
+          {/* Abstract Design background */}
+          <img
+            src={AbstractDesign}
+            alt="Abstract Design"
+            className="absolute left-0 top-0 w-28 md:w-40 lg:w-48 h-auto pointer-events-none select-none"
+            style={{
+              zIndex: 0,
+              opacity: 0.7,
+              // Điều chỉnh opacity và size nếu muốn
+            }}
+            draggable={false}
+          />
+          <div className="relative z-10 flex flex-col items-center justify-center bg-[#232425] rounded-xl py-4 md:py-8 shadow group hover:bg-[#232425]/80 hover:scale-105 hover:shadow-2xl transition-all duration-300 animate-slide-in-up">
+            <img src={IconPersonal1} alt="" className="w-14 h-14 md:w-16 md:h-16 mb-2 md:mb-4 transition-transform duration-300 group-hover:scale-110" />
+            <span className="text-white font-medium text-sm md:text-base text-center">Managing Personal Finances</span>
           </div>
-          <div className="flex flex-col items-center justify-center bg-[#232425] rounded-xl py-8 shadow group hover:bg-[#232425]/80 transition">
-            <img src={IconPersonal2} alt="" className="w-10 h-10 mb-4" />
-            <span className="text-white font-medium text-base">Saving for the Future</span>
+          <div className="relative z-10 flex flex-col items-center justify-center bg-[#232425] rounded-xl py-4 md:py-8 shadow group hover:bg-[#232425]/80 hover:scale-105 hover:shadow-2xl transition-all duration-300 animate-slide-in-up">
+            <img src={IconPersonal2} alt="" className="w-14 h-14 md:w-16 md:h-16 mb-2 md:mb-4 transition-transform duration-300 group-hover:scale-110" />
+            <span className="text-white font-medium text-sm md:text-base text-center">Saving for the Future</span>
           </div>
-          <div className="flex flex-col items-center justify-center bg-[#232425] rounded-xl py-8 shadow group hover:bg-[#232425]/80 transition">
-            <img src={IconPersonal3} alt="" className="w-10 h-10 mb-4" />
-            <span className="text-white font-medium text-base">Homeownership</span>
+          <div className="relative z-10 flex flex-col items-center justify-center bg-[#232425] rounded-xl py-4 md:py-8 shadow group hover:bg-[#232425]/80 hover:scale-105 hover:shadow-2xl transition-all duration-300 animate-slide-in-up">
+            <img src={IconPersonal3} alt="" className="w-14 h-14 md:w-16 md:h-16 mb-2 md:mb-4 transition-transform duration-300 group-hover:scale-110" />
+            <span className="text-white font-medium text-sm md:text-base text-center">Homeownership</span>
           </div>
-          <div className="flex flex-col items-center justify-center bg-[#232425] rounded-xl py-8 shadow group hover:bg-[#232425]/80 transition">
-            <img src={IconPersonal4} alt="" className="w-10 h-10 mb-4" />
-            <span className="text-white font-medium text-base">Education Funding</span>
+          <div className="relative z-10 flex flex-col items-center justify-center bg-[#232425] rounded-xl py-4 md:py-8 shadow group hover:bg-[#232425]/80 hover:scale-105 hover:shadow-2xl transition-all duration-300 animate-slide-in-up">
+            <img src={IconPersonal4} alt="" className="w-14 h-14 md:w-16 md:h-16 mb-2 md:mb-4 transition-transform duration-300 group-hover:scale-110" />
+            <span className="text-white font-medium text-sm md:text-base text-center">Education Funding</span>
           </div>
         </div>
         {/* Right: Text & Stats */}
-        <div className="flex-1 flex flex-col justify-between bg-[#181A1B] rounded-2xl p-8 shadow-lg border border-[#232425]">
+        <div className="flex-1 flex flex-col justify-between bg-[#181A1B] rounded-2xl p-4 md:p-6 lg:p-4 shadow-lg border border-[#232425] mt-4 md:mt-0 animate-slide-in-right">
           <div>
             <h3 className="text-white font-semibold text-xl mb-2">For Individuals</h3>
             <p className="text-gray-300 mb-6 text-base">
@@ -68,9 +81,9 @@ const UseCase = () => (
         </div>
       </div>
       {/* For Business */}
-      <div className="flex flex-col md:flex-row gap-8 mt-8">
+      <div className="flex flex-col md:flex-row gap-3 md:gap-4 lg:gap-3 mt-4 md:mt-6 lg:mt-4">
         {/* Left: Text & Stats */}
-        <div className="flex-1 flex flex-col justify-between bg-[#181A1B] rounded-2xl p-8 shadow-lg border border-[#232425]">
+        <div className="flex-1 flex flex-col justify-between bg-[#181A1B] rounded-2xl p-4 md:p-6 lg:p-4 shadow-lg border border-[#232425] mb-4 md:mb-0 animate-slide-in-left">
           <div>
             <h3 className="text-white font-semibold text-xl mb-2">For Business</h3>
             <p className="text-gray-300 mb-6 text-base">
@@ -96,22 +109,33 @@ const UseCase = () => (
           </button>
         </div>
         {/* Right: Cards */}
-        <div className="flex-1 bg-[#181A1B] rounded-2xl p-8 grid grid-cols-2 gap-6 shadow-lg border border-[#232425]">
-          <div className="flex flex-col items-center justify-center bg-[#232425] rounded-xl py-8 shadow group hover:bg-[#232425]/80 transition">
-            <img src={IconBusiness1} alt="" className="w-10 h-10 mb-4" />
-            <span className="text-white font-medium text-base">Startups and Entrepreneurs</span>
+        <div className="relative flex-1 bg-[#181A1B] rounded-2xl p-4 md:p-6 lg:p-4 grid grid-cols-2 gap-2 md:gap-3 lg:gap-2 shadow-lg border border-[#232425] animate-slide-in-right">
+          {/* AbstractDesign2 background */}
+          <img
+            src={AbstractDesign2}
+            alt="Abstract Design 2"
+            className="absolute right-0 top-0 w-28 md:w-40 lg:w-48 h-auto pointer-events-none select-none"
+            style={{
+              zIndex: 0,
+              opacity: 0.7,
+            }}
+            draggable={false}
+          />
+          <div className="relative z-10 flex flex-col items-center justify-center bg-[#232425] rounded-xl py-4 md:py-8 shadow group hover:bg-[#232425]/80 hover:scale-105 hover:shadow-2xl transition-all duration-300 animate-slide-in-up">
+            <img src={IconBusiness1} alt="" className="w-14 h-14 md:w-16 md:h-16 mb-2 md:mb-4 transition-transform duration-300 group-hover:scale-110" />
+            <span className="text-white font-medium text-sm md:text-base text-center">Startups and Entrepreneurs</span>
           </div>
-          <div className="flex flex-col items-center justify-center bg-[#232425] rounded-xl py-8 shadow group hover:bg-[#232425]/80 transition">
-            <img src={IconBusiness2} alt="" className="w-10 h-10 mb-4" />
-            <span className="text-white font-medium text-base">Cash Flow Management</span>
+          <div className="relative z-10 flex flex-col items-center justify-center bg-[#232425] rounded-xl py-4 md:py-8 shadow group hover:bg-[#232425]/80 hover:scale-105 hover:shadow-2xl transition-all duration-300 animate-slide-in-up">
+            <img src={IconBusiness2} alt="" className="w-14 h-14 md:w-16 md:h-16 mb-2 md:mb-4 transition-transform duration-300 group-hover:scale-110" />
+            <span className="text-white font-medium text-sm md:text-base text-center">Cash Flow Management</span>
           </div>
-          <div className="flex flex-col items-center justify-center bg-[#232425] rounded-xl py-8 shadow group hover:bg-[#232425]/80 transition">
-            <img src={IconBusiness3} alt="" className="w-10 h-10 mb-4" />
-            <span className="text-white font-medium text-base">Business Expansion</span>
+          <div className="relative z-10 flex flex-col items-center justify-center bg-[#232425] rounded-xl py-4 md:py-8 shadow group hover:bg-[#232425]/80 hover:scale-105 hover:shadow-2xl transition-all duration-300 animate-slide-in-up">
+            <img src={IconBusiness3} alt="" className="w-14 h-14 md:w-16 md:h-16 mb-2 md:mb-4 transition-transform duration-300 group-hover:scale-110" />
+            <span className="text-white font-medium text-sm md:text-base text-center">Business Expansion</span>
           </div>
-          <div className="flex flex-col items-center justify-center bg-[#232425] rounded-xl py-8 shadow group hover:bg-[#232425]/80 transition">
-            <img src={IconBusiness4} alt="" className="w-10 h-10 mb-4" />
-            <span className="text-white font-medium text-base">Payment Solutions</span>
+          <div className="relative z-10 flex flex-col items-center justify-center bg-[#232425] rounded-xl py-4 md:py-8 shadow group hover:bg-[#232425]/80 hover:scale-105 hover:shadow-2xl transition-all duration-300 animate-slide-in-up">
+            <img src={IconBusiness4} alt="" className="w-14 h-14 md:w-16 md:h-16 mb-2 md:mb-4 transition-transform duration-300 group-hover:scale-110" />
+            <span className="text-white font-medium text-sm md:text-base text-center">Payment Solutions</span>
           </div>
         </div>
       </div>

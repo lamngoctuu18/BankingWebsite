@@ -6,11 +6,9 @@ import IconEur from "../assets/images/euro.png";
 import IconUsd from "../assets/images/dola.png";
 import IconCheck from "../assets/images/NoLLc.png";
 import IconBtc from "../assets/images/bicoin.png";
-
 const neon = "#C7FF00";
 const darkBg = "#181A1B";
 const cardBg = "#232425";
-const textGray = "text-gray-400";
 const currencies = [
   { icon: <img src={IconUsd} alt="USD" width={28} height={28} />, label: "USD" },
   { icon: <img src={IconEur} alt="EUR" width={28} height={28} />, label: "EUR" },
@@ -20,34 +18,31 @@ const currencies = [
 
 const HeroSection = () => (
   <main
-    className="relative min-h-[700px] flex items-center"
+    className="relative min-h-[700px] flex flex-col md:flex-row items-center md:items-start"
     style={{ background: darkBg }}
   >
-    <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row gap-16 items-start px-8 py-12">
+    <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row gap-6 md:gap-8 lg:gap-4 items-center md:items-start px-2 sm:px-4 lg:px-6 py-6 md:py-8 lg:py-6">
       {/* Left: Intro */}
-      <section className="flex-1 flex flex-col gap-8 pt-4">
+      <section className="flex-1 flex flex-col gap-4 md:gap-6 lg:gap-4 pt-2 md:pt-2 w-full">
         {/* Badge */}
         <div
           className="inline-flex items-center gap-2 px-4 py-1 rounded-full"
           style={{
             background: "#232425",
             fontWeight: 600,
-            minWidth: 260,
+            minWidth: 200,
             marginBottom: "18px",
           }}
         >
-        
             <img src={IconCheck} alt="check" width={20} height={20} />
-
           <span className="text-sm font-medium text-white">
             No LLC Required, No Credit Check.
           </span>
         </div>
         {/* Title */}
         <h1
-          className="font-extrabold text-white"
+          className="font-extrabold text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
           style={{
-            fontSize: "2.6rem",
             lineHeight: 1.15,
             fontFamily: "Inter, Arial, sans-serif",
             letterSpacing: "-1px",
@@ -85,10 +80,10 @@ const HeroSection = () => (
         </button>
       </section>
       {/* Right: Card Widget */}
-      <section className="flex-1 flex flex-col gap-8 w-full max-w-md mx-auto relative">
+      <section className="flex-1 flex flex-col gap-6 md:gap-8 w-full max-w-md mx-auto relative mt-8 md:mt-0">
         {/* Monthly Income Badge */}
         <div
-          className="absolute -top-12 left-0 z-30"
+          className="absolute -top-12 left-0 z-30 hidden sm:flex"
           style={{
             background: "#232425",
             borderRadius: "16px",
@@ -96,7 +91,7 @@ const HeroSection = () => (
             padding: "18px 32px 18px 24px",
             display: "flex",
             alignItems: "center",
-            minWidth: 270,
+            minWidth: 200,
             minHeight: 64,
             fontWeight: 600,
             gap: 16,
@@ -127,36 +122,36 @@ const HeroSection = () => (
         </div>
         {/* Card Widget */}
         <div
-          className="rounded-[18px] relative"
+          className="rounded-[18px] relative w-full overflow-visible"
           style={{
             background: cardBg,
             boxShadow: "0 8px 40px 0 #000a, 0 0 0 2px #C7FF0033",
             border: `1.5px solid #232425`,
-            overflow: "visible",
-            padding: "2.5rem 2rem 2rem 2rem",
-            minWidth: 420,
-            minHeight: 480,
+            padding: "2.5rem 1rem 2rem 1rem",
+            minWidth: 0,
+            minHeight: 380,
+            maxWidth: "100%",
+            zIndex: 0, // Đảm bảo lớp này thấp hơn các nội dung khác
           }}
         >
           {/* Neon arrows illustration */}
-          <img
-            src={GroupImg}
-            alt="Neon Arrows"
+          <div
+            className="absolute top-6 right-0 md:top-8 md:right-[-80px] lg:top-8 lg:right-[-120px] w-40 h-40 md:w-56 md:h-56 lg:w-72 lg:h-72 pointer-events-none"
             style={{
-              position: "absolute",
-              top: "30px",
-              right: "-200px",
-              width: 320,
-              height: 320,
-              objectFit: "contain",
-              opacity: 1,
-              zIndex: 1,
-              pointerEvents: "none",
+              zIndex: 0, // Đặt zIndex thấp để icon Group.png lùi xuống dưới các nội dung khác
               filter: "drop-shadow(0 0 32px #C7FF00AA)",
             }}
-          />
+          >
+            <img
+              src={GroupImg}
+              alt="Neon Arrows"
+              className="w-full h-full object-contain"
+              draggable={false}
+              style={{ zIndex: 0 }}
+            />
+          </div>
           {/* Transactions */}
-          <div>
+          <div className="relative z-10">
             <div className="text-white font-bold text-base mb-3">Your Transactions</div>
             <div className="flex flex-col gap-2">
               {/* First transaction - active */}
@@ -204,7 +199,7 @@ const HeroSection = () => (
             <div className="mt-8">
               <div className="text-white font-bold mb-4 text-base">Money Exchange</div>
               <div
-                className="flex items-center justify-between gap-4 mb-4 rounded-[12px] border bg-[#232425] px-4 py-4"
+                className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-4 rounded-[12px] border bg-[#232425] px-4 py-4"
                 style={{
                   border: "1.5px solid #444",
                   boxShadow: "0 2px 12px #C7FF0033",
@@ -247,17 +242,11 @@ const HeroSection = () => (
           </div>
           {/* Supported Currency Bar */}
           <div
-            className="flex items-center justify-between rounded-full px-6 py-2 shadow-lg border"
+            className="flex items-center justify-between rounded-full px-6 py-2 shadow-lg border absolute right-2 left-2 sm:right-8 sm:left-auto sm:bottom-[-76px] bottom-[-60px] min-w-[200px] sm:min-w-[260px] w-max z-30"
             style={{
               background: "#232425",
               border: `1.5px solid #232425`,
               boxShadow: "0 2px 12px #C7FF0033",
-              position: "absolute",
-              right: "-80px",
-              bottom: "-76px",
-              minWidth: 260,
-              width: "max-content",
-              zIndex: 30,
               transform: "none",
             }}
           >
@@ -289,6 +278,8 @@ const HeroSection = () => (
 );
 
 export default HeroSection;
+
+
 
 
 

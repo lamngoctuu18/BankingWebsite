@@ -19,11 +19,11 @@ const UseCase = () => (
     <p className="text-gray-300 mb-6 md:mb-8 lg:mb-6 text-sm md:text-base">
       At YourBank, we cater to the diverse needs of individuals and businesses alike, offering a wide range of financial solutions
     </p>
-    <div className="flex flex-col gap-6 md:gap-8 lg:gap-6">
+    <div className="flex flex-col gap-8 md:gap-8 lg:gap-6">
       {/* For Individuals */}
-      <div className="flex flex-col md:flex-row gap-3 md:gap-4 lg:gap-3">
+      <div className="flex flex-col gap-4 md:flex-row md:gap-4 lg:gap-3">
         {/* Left: Cards */}
-        <div className="relative flex-1 bg-[#181A1B] rounded-2xl p-4 md:p-6 lg:p-4 grid grid-cols-2 gap-2 md:gap-3 lg:gap-2 shadow-lg border border-[#232425] animate-slide-in-left">
+        <div className="relative flex-1 bg-[#181A1B] rounded-2xl p-4 md:p-6 lg:p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 md:gap-3 lg:gap-2 shadow-lg border border-[#232425] animate-slide-in-left mb-4 md:mb-0">
           {/* Abstract Design background */}
           <img
             src={AbstractDesign}
@@ -54,7 +54,7 @@ const UseCase = () => (
           </div>
         </div>
         {/* Right: Text & Stats */}
-        <div className="flex-1 flex flex-col justify-between bg-[#181A1B] rounded-2xl p-4 md:p-6 lg:p-4 shadow-lg border border-[#232425] mt-4 md:mt-0 animate-slide-in-right">
+        <div className="flex-1 flex flex-col justify-between bg-[#181A1B] rounded-2xl p-4 md:p-6 lg:p-4 shadow-lg border border-[#232425] mt-0 md:mt-0">
           <div>
             <h3 className="text-white font-semibold text-xl mb-2">For Individuals</h3>
             <p className="text-gray-300 mb-6 text-base">
@@ -81,9 +81,9 @@ const UseCase = () => (
         </div>
       </div>
       {/* For Business */}
-      <div className="flex flex-col md:flex-row gap-3 md:gap-4 lg:gap-3 mt-4 md:mt-6 lg:mt-4">
+      <div className="flex flex-col gap-4 md:flex-row md:gap-4 lg:gap-3 mt-4 md:mt-6 lg:mt-4">
         {/* Left: Text & Stats */}
-        <div className="flex-1 flex flex-col justify-between bg-[#181A1B] rounded-2xl p-4 md:p-6 lg:p-4 shadow-lg border border-[#232425] mb-4 md:mb-0 animate-slide-in-left">
+        <div className="flex-1 flex flex-col justify-between bg-[#181A1B] rounded-2xl p-4 md:p-6 lg:p-4 shadow-lg border border-[#232425] mb-0 md:mb-0">
           <div>
             <h3 className="text-white font-semibold text-xl mb-2">For Business</h3>
             <p className="text-gray-300 mb-6 text-base">
@@ -109,7 +109,7 @@ const UseCase = () => (
           </button>
         </div>
         {/* Right: Cards */}
-        <div className="relative flex-1 bg-[#181A1B] rounded-2xl p-4 md:p-6 lg:p-4 grid grid-cols-2 gap-2 md:gap-3 lg:gap-2 shadow-lg border border-[#232425] animate-slide-in-right">
+        <div className="relative flex-1 bg-[#181A1B] rounded-2xl p-4 md:p-6 lg:p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 md:gap-3 lg:gap-2 shadow-lg border border-[#232425] animate-slide-in-right">
           {/* AbstractDesign2 background */}
           <img
             src={AbstractDesign2}

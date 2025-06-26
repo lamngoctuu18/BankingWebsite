@@ -17,7 +17,7 @@ const Footer = () => (
         <div className="flex items-center gap-2 mb-2">
           <img src={Logo} alt="YourBank" style={{ width: 134, height: 35 }} />
         </div>
-        <nav className="flex flex-wrap gap-4 md:gap-8 mb-4 justify-center">
+        <nav className="flex flex-col md:flex-row gap-4 md:gap-8 mb-4 justify-center items-center">
           <a href="/" className="text-white hover:text-[#C7FF00]">Home</a>
           <a href="/careers" className="text-white hover:text-[#C7FF00]">Careers</a>
           <a href="/about" className="text-white hover:text-[#C7FF00]">About</a>
@@ -25,37 +25,37 @@ const Footer = () => (
         </nav>
       </div>
       {/* Contact */}
-      <div className="flex flex-col md:flex-row gap-3 md:gap-8 mb-6 text-white items-center">
-        <span className="flex items-center gap-2">
+      <div className="flex flex-col md:flex-row gap-3 md:gap-8 mb-6 text-white items-center text-center">
+        <span className="flex items-center gap-2 justify-center">
           <img src={IconMail} alt="mail" style={{ width: 20, height: 21 }} />
           hello@skillbridge.com
         </span>
-        <span className="flex items-center gap-2">
+        <span className="flex items-center gap-2 justify-center">
           <img src={IconPhone} alt="phone" style={{ width: 20, height: 21 }} />
           +91 91813 23 2309
         </span>
-        <span className="flex items-center gap-2">
+        <span className="flex items-center gap-2 justify-center">
           <img src={IconLocation} alt="location" style={{ width: 20, height: 21 }} />
           Somewhere in the World
         </span>
       </div>
       {/* Social + Copyright + Policy */}
-      <div className="w-full border-t border-[#232425] pt-6 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6 mt-8 rounded-full">
-        <div className="flex gap-2 md:gap-4">
-          <a href="#" className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: neon }}>
-            <img src={IconFacebook} alt="facebook" style={{ width: 20, height: 20 }} />
+      <div className="w-full border-t border-[#232425] pt-6 flex flex-col items-center justify-center gap-4 md:flex-row md:justify-between md:gap-6 mt-8 rounded-full">
+        <div className="flex gap-4 md:gap-4 mb-2 md:mb-0">
+          <a href="#" className="w-12 h-12 rounded-full flex items-center justify-center" style={{ background: neon }}>
+            <img src={IconFacebook} alt="facebook" style={{ width: 24, height: 24 }} />
           </a>
-          <a href="#" className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: neon }}>
-            <img src={IconTwitter} alt="twitter" style={{ width: 20, height: 20 }} />
+          <a href="#" className="w-12 h-12 rounded-full flex items-center justify-center" style={{ background: neon }}>
+            <img src={IconTwitter} alt="twitter" style={{ width: 24, height: 24 }} />
           </a>
-          <a href="#" className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: neon }}>
-            <img src={IconLinkedin} alt="linkedin" style={{ width: 20, height: 20 }} />
+          <a href="#" className="w-12 h-12 rounded-full flex items-center justify-center" style={{ background: neon }}>
+            <img src={IconLinkedin} alt="linkedin" style={{ width: 24, height: 24 }} />
           </a>
         </div>
         <div className="text-gray-400 text-xs md:text-sm text-center">YourBank All Rights Reserved</div>
-        <div className="flex gap-2 md:gap-4 text-gray-400 text-xs md:text-sm">
+        <div className="flex flex-col md:flex-row gap-2 md:gap-4 text-gray-400 text-xs md:text-sm items-center">
           <a href="#" className="hover:text-white">Privacy Policy</a>
-          <span>|</span>
+          <span className="hidden md:inline">|</span>
           <a href="#" className="hover:text-white">Terms of Service</a>
         </div>
       </div>

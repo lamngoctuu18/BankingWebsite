@@ -74,7 +74,7 @@ const TestimonialsSection = () => {
         {/* Left Arrow */}
         <button
           onClick={handlePrev}
-          className="absolute left-0 z-10 w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#232425] flex items-center justify-center text-[#C7FF00] hover:bg-[#C7FF00] hover:text-[#232425] transition"
+          className="absolute left-0 z-10 w-10 h-10 md:w-10 md:h-10 rounded-full bg-[#232425] flex items-center justify-center text-[#C7FF00] hover:bg-[#C7FF00] hover:text-[#232425] transition"
           aria-label="Previous"
         >
           <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
@@ -90,7 +90,7 @@ const TestimonialsSection = () => {
               i === activeIndex ? (
                 <div
                   key={i}
-                  className="rounded-2xl bg-[#181A1B] border border-[#232425] p-5 w-[90vw] max-w-[350px] flex flex-col items-center text-center transition-all duration-500 ease-in-out animate-slide-in-up"
+                  className="rounded-2xl bg-[#181A1B] border border-[#232425] p-6 w-[90vw] max-w-[350px] flex flex-col items-center text-center transition-all duration-500 ease-in-out animate-slide-in-up"
                   style={{
                     opacity: 1,
                     transform: "scale(1)",
@@ -151,7 +151,7 @@ const TestimonialsSection = () => {
         {/* Right Arrow */}
         <button
           onClick={handleNext}
-          className="absolute right-0 z-10 w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#232425] flex items-center justify-center text-[#C7FF00] hover:bg-[#C7FF00] hover:text-[#232425] transition"
+          className="absolute right-0 z-10 w-10 h-10 md:w-10 md:h-10 rounded-full bg-[#232425] flex items-center justify-center text-[#C7FF00] hover:bg-[#C7FF00] hover:text-[#232425] transition"
           aria-label="Next"
         >
           <svg width="20" height="20" fill="none" viewBox="0 0 20 20">

@@ -65,17 +65,13 @@ const OurProducts = () => {
           </div>
         </div>
         {/* Products */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 bg-transparent">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-0 bg-transparent">
           {products.map((p, i) => (
             <div
               key={i}
-              className={`flex flex-col items-center text-center px-4 py-8 md:px-8 md:py-12 w-full transition-all duration-300 hover:scale-105 hover:shadow-2xl group animate-slide-in-up`}
+              className="flex flex-col items-center text-center px-4 py-8 md:px-8 md:py-12 w-full transition-all duration-300 hover:scale-105 hover:shadow-2xl group animate-slide-in-up bg-[#232425] rounded-2xl mb-4 md:mb-0"
               style={{
-                background: "transparent",
                 borderRight: i < 2 && window.innerWidth >= 768 ? "1px solid #232425" : "none",
-                borderLeft: "none",
-                borderTop: "none",
-                borderBottom: "none",
                 minHeight: 240,
               }}
             >
@@ -83,7 +79,10 @@ const OurProducts = () => {
                 {p.icon}
               </div>
               <h3 className="text-lg md:text-xl font-semibold text-white mb-2 md:mb-3">{p.title}</h3>
-              <p className="text-gray-300 text-sm md:text-base">{p.desc}</p>
+              <p className="text-gray-300 text-sm md:text-base mb-4">{p.desc}</p>
+              <button className="rounded-full border border-[#C7FF00] px-6 py-2 text-[#C7FF00] font-semibold mt-2 mx-auto w-full md:w-auto">
+                Learn More
+              </button>
             </div>
           ))}
         </div>

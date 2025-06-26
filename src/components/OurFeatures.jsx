@@ -91,11 +91,13 @@ const OurFeatures = () => {
 					{featureCards.map((card, idx) => (
 						<div
 							key={idx}
-							className="rounded-2xl bg-[#232425] p-5 md:p-7 flex flex-col justify-between min-h-[140px] md:min-h-[170px] border border-[#232425] hover:border-[#C7FF00] transition group"
+							className="rounded-2xl bg-[#232425] p-5 md:p-7 flex flex-col md:flex-row items-start md:items-center justify-between min-h-[140px] md:min-h-[170px] border border-[#232425] hover:border-[#C7FF00] transition group w-full"
 							style={{
 								boxShadow: "0 2px 16px #0004",
 							}}
 						>
+							{/* Icon bên trái (có thể thêm icon nếu có) */}
+							{/* <span className="mr-4">{/* icon here * /}</span> */}
 							<div>
 								<div className="flex items-center justify-between mb-2">
 									<h3 className="text-lg font-semibold text-white">

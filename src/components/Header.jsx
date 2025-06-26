@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import Logo from "../assets/images/logotrangchu.png";
 
 function Header() {
   const location = useLocation();
@@ -10,24 +11,22 @@ function Header() {
   ];
 
   return (
-    <header className="bg-[#181A1B] w-full py-6 px-4">
-      <div className="max-w-7xl mx-auto flex items-center justify-between rounded-full bg-[#232425] px-8 py-3 shadow-lg border border-[#232425]">
+    <header className="w-full flex justify-center pt-[30px]">
+      <div
+        className="flex items-center justify-between"
+        style={{
+          width: "1280px",
+          height: "73px",
+          borderRadius: "100px",
+          background: "rgba(28,28,28,1)",
+          border: "1px solid rgba(38,38,38,1)",
+          padding: "14px 24px",
+        }}
+      >
         {/* Logo + Brand */}
         <div className="flex items-center gap-3">
-          {/* Logo shape */}
-          <div className="w-9 h-9 flex items-center justify-center rounded-md bg-transparent">
-            {/* Neon green logo (SVG) */}
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-              <rect x="4" y="4" width="10" height="10" rx="2" fill="#D1FF3A" />
-              <rect x="22" y="4" width="10" height="10" rx="2" fill="#D1FF3A" />
-              <rect x="4" y="22" width="10" height="10" rx="2" fill="#D1FF3A" />
-              <rect x="22" y="22" width="10" height="10" rx="2" fill="#D1FF3A" />
-              <rect x="10" y="10" width="16" height="16" rx="4" fill="#181A1B" />
-            </svg>
-          </div>
-          <span className="text-white text-xl font-semibold tracking-wide select-none">
-            YourBanK
-          </span>
+          {/* Logo image */}
+          <img src={Logo} alt="YourBank" style={{ width: 134, height: 35 }} />
         </div>
         {/* Menu */}
         <nav className="flex gap-8">

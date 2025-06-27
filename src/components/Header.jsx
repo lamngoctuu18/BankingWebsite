@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import Logo from "../assets/images/logotrangchu.png";
 import { useState } from "react";
+import BgObjects from "../assets/images/nenHome.png"; 
 
 function Header() {
   const location = useLocation();
@@ -13,13 +14,21 @@ function Header() {
   ];
 
   return (
-    <header className="w-full flex justify-center pt-6 md:pt-[30px]">
+    <header className="w-full flex justify-center pt-6 md:pt-[30px] relative">
+      {/* Nền icon Objects.png */}
+      <img
+        src={BgObjects}
+        alt=""
+        className="absolute left-0 top-0 w-[520px] h-[300px] md:w-[700px] md:h-[400px] pointer-events-none select-none z-0"
+        style={{ objectFit: "cover" }}
+        draggable={false}
+      />
       <div
-        className="flex items-center justify-between w-full max-w-[1280px] h-[73px] rounded-full bg-[#1C1C1C] border border-[#262626] px-4 md:px-6 lg:px-8 py-2 md:py-[14px] relative"
+        className="flex items-center justify-between w-full max-w-[1280px] h-[73px] rounded-full bg-[#1C1C1C] border border-[#262626] px-4 md:px-6 lg:px-8 py-2 md:py-[14px] relative z-10"
       >
         {/* Logo + Brand */}
         <div className="flex items-center gap-3 flex-shrink-0">
-          <img src={Logo} alt="YourBank" style={{ width: 134, height: 35 }} />
+          <img src={Logo} alt="YourBank" style={{ width: "120.75px", height: "32.75px", top: "8.13px", left: "33.13px"}} />
         </div>
         {/* Hamburger for mobile */}
         <button
@@ -43,6 +52,13 @@ function Header() {
                   ? "bg-[#232425] text-white rounded-full"
                   : "text-white hover:text-[#D1FF3A]")
               }
+              style={{ 
+              fontFamily: "Lexend, sans-serif",
+              fontWeight: 400,
+              fontSize: "15px",
+              lineHeight: "150%",
+              letterSpacing: 0, 
+               }}
             >
               {item.label}
             </Link>
@@ -53,12 +69,26 @@ function Header() {
           <Link
             to="/signup"
             className="text-white text-base font-medium hover:underline"
+            style={{ 
+              fontFamily: "Lexend, sans-serif",
+              fontWeight: 400,
+              fontSize: "15px",
+              lineHeight: "150%",
+              letterSpacing: 0,    
+            }}
           >
             Sign Up
           </Link>
           <Link
             to="/login"
             className="bg-[#D1FF3A] text-[#232425] font-semibold px-5 lg:px-7 py-2 rounded-full text-base shadow transition hover:brightness-110"
+            style={{ 
+              fontFamily: "Lexend, sans-serif",
+              fontWeight: 400,
+              fontSize: "15px",
+              lineHeight: "150%",
+              letterSpacing: 0, 
+            }}
           >
             Login
           </Link>
@@ -78,6 +108,7 @@ function Header() {
                       : "text-white hover:text-[#D1FF3A]")
                   }
                   onClick={() => setOpen(false)}
+                  style={{ fontFamily: "Lexend, sans-serif" }}
                 >
                   {item.label}
                 </Link>
@@ -88,6 +119,7 @@ function Header() {
                 to="/signup"
                 className="text-white text-base font-medium hover:underline py-2"
                 onClick={() => setOpen(false)}
+                style={{ fontFamily: "Lexend, sans-serif" }}
               >
                 Sign Up
               </Link>
@@ -95,6 +127,7 @@ function Header() {
                 to="/login"
                 className="bg-[#D1FF3A] text-[#232425] font-semibold px-5 py-2 rounded-full text-base shadow transition hover:brightness-110"
                 onClick={() => setOpen(false)}
+                style={{ fontFamily: "Lexend, sans-serif" }}
               >
                 Login
               </Link>

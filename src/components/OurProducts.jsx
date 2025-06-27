@@ -35,7 +35,7 @@ const OurProducts = () => {
         {/* Title & Desc */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
           <div>
-            <h2 className="text-4xl font-bold text-white mb-2">
+            <h2 className="text-2xl font-bold text-white mb-2">
               Our <span style={{ color: neon }}>Products</span>
             </h2>
             <p className="text-gray-300 max-w-2xl">
@@ -69,10 +69,11 @@ const OurProducts = () => {
           {products.map((p, i) => (
             <div
               key={i}
-              className="flex flex-col items-center text-center px-4 py-8 md:px-8 md:py-12 w-full transition-all duration-300 hover:scale-105 hover:shadow-2xl group animate-slide-in-up bg-[#232425] rounded-2xl mb-4 md:mb-0"
+              className="flex flex-col items-center text-center px-4 py-8 md:px-8 md:py-12 w-full transition-all duration-300 hover:scale-105 hover:shadow-2xl group animate-slide-in-up rounded-2xl mb-4 md:mb-0"
               style={{
                 borderRight: i < 2 && window.innerWidth >= 768 ? "1px solid #232425" : "none",
                 minHeight: 240,
+                background: "transparent",
               }}
             >
               <div className="mb-4 flex items-center justify-center">
@@ -92,4 +93,3 @@ const OurProducts = () => {
 };
 
 export default OurProducts;
-

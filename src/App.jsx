@@ -19,7 +19,10 @@ import CTASection from "./components/CTASection";
 function App() {
   return (
     <Router>
-      <div className="bg-[#181A1B] min-h-screen font-sans">
+      <div
+        className="min-h-screen font-sans"
+        style={{ background: "rgba(26, 26, 26, 1)", fontFamily: "Lexend, sans-serif" }}
+      >
         <Header />
         <main className="mt-8 md:mt-12 px-4">
           <Routes>

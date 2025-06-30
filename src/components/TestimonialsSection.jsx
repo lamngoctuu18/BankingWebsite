@@ -96,7 +96,6 @@ const TestimonialsSection = () => {
                     transform: "scale(1)",
                     filter: "none",
                     zIndex: 2,
-                    boxShadow: "0 4px 32px #C7FF0033",
                     position: "relative",
                   }}
                 >
@@ -134,7 +133,6 @@ const TestimonialsSection = () => {
                     transform: `scale(${scale})`,
                     filter,
                     zIndex: pos === 1 ? 2 : 1,
-                    boxShadow: pos === 1 ? "0 4px 32px #C7FF0033" : "none",
                     position: "relative",
                   }}
                 >

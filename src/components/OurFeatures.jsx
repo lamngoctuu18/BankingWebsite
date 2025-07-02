@@ -42,14 +42,11 @@ const OurFeatures = () => {
 	const [activeTab, setActiveTab] = useState(0);
 
 	return (
-		<section
-			className="max-w-7xl mx-auto py-10 md:py-16 px-2 sm:px-4"
-			style={{ fontFamily: "Lexend, sans-serif" }}
-		>
+		<section className="max-w-7xl mx-auto py-10 md:py-16 px-2 sm:px-4 font-['Lexend',sans-serif]">
 			{/* Title & Description */}
 			<h2 className="text-2xl md:text-4xl font-bold mb-2 flex items-end gap-2">
 				<span className="text-white">Our</span>
-				<span style={{ color: neon }}>Features</span>
+				<span className="text-[#C7FF00]">Features</span>
 			</h2>
 			<p className="text-[#BFBFBF] mb-8 md:mb-10 max-w-3xl text-sm md:text-base font-normal">
 				Experience a host of powerful features at YourBank, including seamless
@@ -63,17 +60,11 @@ const OurFeatures = () => {
 						<button
 							key={tab.label}
 							onClick={() => setActiveTab(i)}
-							className={`rounded-full px-6 py-3 text-base font-medium transition-all duration-200 border ${
+							className={`rounded-full px-6 py-3 text-base font-medium transition-all duration-200 border outline-none font-['Lexend',sans-serif] ${
 								activeTab === i
-									? "bg-[#181A1B] text-[#C7FF00] border-[#C7FF00]"
-									: "bg-[#181A1B] text-white border-[#232425] hover:border-[#C7FF00] hover:text-[#C7FF00]"
+									? "bg-[#181A1B] text-[#C7FF00] border-[#C7FF00] shadow-[0_2px_12px_#C7FF0033]"
+									: "bg-[#181A1B] text-white border-[#232425]"
 							}`}
-							style={{
-								outline: "none",
-								fontFamily: "Lexend, sans-serif",
-								boxShadow:
-									activeTab === i ? "0 2px 12px #C7FF0033" : "none",
-							}}
 						>
 							{tab.label}
 						</button>
@@ -84,11 +75,7 @@ const OurFeatures = () => {
 					{featureCards.map((card, idx) => (
 						<div
 							key={idx}
-							className="rounded-2xl bg-[#181A1B] p-6 md:p-7 flex flex-col min-h-[140px] md:min-h-[170px] border border-[#232425] hover:border-[#C7FF00] transition group w-full"
-							style={{
-								boxShadow: "0 2px 16px #0004",
-								fontFamily: "Lexend, sans-serif",
-							}}
+							className="rounded-2xl bg-[#181A1B] p-6 md:p-7 flex flex-col min-h-[140px] md:min-h-[170px] border border-[#232425] transition group w-full shadow-[0_2px_16px_#0004] font-['Lexend',sans-serif] hover:border-[#C7FF00]"
 						>
 							<div className="flex items-start justify-between mb-2">
 								<h3 className="text-white text-lg md:text-xl font-semibold">

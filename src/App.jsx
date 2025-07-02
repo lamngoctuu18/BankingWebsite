@@ -15,6 +15,7 @@ import OurFeatures from "./components/OurFeatures";
 import FAQSection from "./components/FAQSection";
 import TestimonialsSection from "./components/TestimonialsSection";
 import CTASection from "./components/CTASection";
+import MainHome from "./pages/MainHome";
 
 function App() {
   return (
@@ -26,21 +27,7 @@ function App() {
         <Header />
         <main className="mt-8 md:mt-12 px-4">
           <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <Home />
-                  <HeroSection />
-                  <OurProducts />
-                  <UseCase />
-                  <OurFeatures />
-                  <FAQSection />
-                  <TestimonialsSection />
-                  <CTASection />
-                </>
-              }
-            />
+            <Route path="/" element={<MainHome />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/about" element={<About />} />
             <Route path="/security" element={<Security />} />

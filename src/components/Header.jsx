@@ -3,7 +3,7 @@ import Logo from "../assets/images/logotrangchu.png";
 import { useState } from "react";
 import BgObjects from "../assets/images/nenHome.png"; 
 
-function Header() {
+const Header = () => {
   const location = useLocation();
   const [open, setOpen] = useState(false);
   const menu = [
@@ -14,13 +14,12 @@ function Header() {
   ];
 
   return (
-    <header className="w-full flex justify-center pt-6 md:pt-[30px] relative">
+    <header className="w-full flex justify-center pt-6 md:pt-[30px] relative font-['Lexend',sans-serif]">
       {/* Nền icon Objects.png */}
       <img
         src={BgObjects}
         alt=""
-        className="absolute left-0 top-0 w-[520px] h-[300px] md:w-[700px] md:h-[400px] pointer-events-none select-none z-0"
-        style={{ objectFit: "cover" }}
+        className="absolute left-0 top-0 w-[520px] h-[300px] md:w-[700px] md:h-[400px] pointer-events-none select-none z-0 object-cover"
         draggable={false}
       />
       <div
@@ -28,7 +27,7 @@ function Header() {
       >
         {/* Logo + Brand */}
         <div className="flex items-center gap-3 flex-shrink-0">
-          <img src={Logo} alt="YourBank" style={{ width: "120.75px", height: "32.75px", top: "8.13px", left: "33.13px"}} />
+          <img src={Logo} alt="YourBank" className="w-[120.75px] h-[32.75px]" />
         </div>
         {/* Hamburger for mobile */}
         <button
@@ -47,18 +46,11 @@ function Header() {
               key={item.to}
               to={item.to}
               className={
-                "px-4 lg:px-5 py-2 text-base font-medium transition " +
+                "px-4 lg:px-5 py-2 text-base font-medium transition font-['Lexend',sans-serif] " +
                 (location.pathname === item.to
                   ? "bg-[#232425] text-white rounded-full"
                   : "text-white hover:text-[#D1FF3A]")
               }
-              style={{ 
-              fontFamily: "Lexend, sans-serif",
-              fontWeight: 400,
-              fontSize: "15px",
-              lineHeight: "150%",
-              letterSpacing: 0, 
-               }}
             >
               {item.label}
             </Link>
@@ -68,27 +60,13 @@ function Header() {
         <div className="hidden md:flex items-center gap-2 lg:gap-4">
           <Link
             to="/signup"
-            className="text-white text-base font-medium hover:underline"
-            style={{ 
-              fontFamily: "Lexend, sans-serif",
-              fontWeight: 400,
-              fontSize: "15px",
-              lineHeight: "150%",
-              letterSpacing: 0,    
-            }}
+            className="text-white text-base font-medium hover:underline font-['Lexend',sans-serif]"
           >
             Sign Up
           </Link>
           <Link
             to="/login"
-            className="bg-[#D1FF3A] text-[#232425] font-semibold px-5 lg:px-7 py-2 rounded-full text-base shadow transition hover:brightness-110"
-            style={{ 
-              fontFamily: "Lexend, sans-serif",
-              fontWeight: 400,
-              fontSize: "15px",
-              lineHeight: "150%",
-              letterSpacing: 0, 
-            }}
+            className="bg-[#D1FF3A] text-[#232425] font-semibold px-5 lg:px-7 py-2 rounded-full text-base shadow transition hover:brightness-110 font-['Lexend',sans-serif]"
           >
             Login
           </Link>
@@ -102,13 +80,12 @@ function Header() {
                   key={item.to}
                   to={item.to}
                   className={
-                    "block px-4 py-2 text-base font-medium rounded-full transition " +
+                    "block px-4 py-2 text-base font-medium rounded-full transition font-['Lexend',sans-serif] " +
                     (location.pathname === item.to
                       ? "bg-[#232425] text-white"
                       : "text-white hover:text-[#D1FF3A]")
                   }
                   onClick={() => setOpen(false)}
-                  style={{ fontFamily: "Lexend, sans-serif" }}
                 >
                   {item.label}
                 </Link>
@@ -117,17 +94,15 @@ function Header() {
             <div className="flex flex-col gap-1 px-4 pb-3">
               <Link
                 to="/signup"
-                className="text-white text-base font-medium hover:underline py-2"
+                className="text-white text-base font-medium hover:underline py-2 font-['Lexend',sans-serif]"
                 onClick={() => setOpen(false)}
-                style={{ fontFamily: "Lexend, sans-serif" }}
               >
                 Sign Up
               </Link>
               <Link
                 to="/login"
-                className="bg-[#D1FF3A] text-[#232425] font-semibold px-5 py-2 rounded-full text-base shadow transition hover:brightness-110"
+                className="bg-[#D1FF3A] text-[#232425] font-semibold px-5 py-2 rounded-full text-base shadow transition hover:brightness-110 font-['Lexend',sans-serif]"
                 onClick={() => setOpen(false)}
-                style={{ fontFamily: "Lexend, sans-serif" }}
               >
                 Login
               </Link>

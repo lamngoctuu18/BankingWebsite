@@ -57,7 +57,7 @@ const HeroSection = () => (
             No LLC Required, No Credit Check.
           </span>
         </div>
-        {/* Title */}
+        {/* tiêu đề */}
         <h1
           className="font-extrabold text-white text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] leading-[1.15]"
           style={{
@@ -69,7 +69,7 @@ const HeroSection = () => (
           Welcome to YourBank<br />
           Empowering Your <span style={{ color: neon, display: "inline" }}>Financial Journey</span>
         </h1>
-        {/* Description */}
+        {/* Mô tả */}
         <p
           className="text-[16px] sm:text-[17px] md:text-[18px]"
           style={{
@@ -84,7 +84,7 @@ const HeroSection = () => (
         >
           At YourBank, our mission is to provide comprehensive banking solutions that empower individuals and businesses to achieve their financial goals. We are committed to delivering personalized and innovative services that prioritize our customers' needs.
         </p>
-        {/* Open Account Button */}
+        {/*nút Open Account */}
         <button
           className="font-bold text-[17px] rounded-full px-8 py-3 shadow-lg transition hover:brightness-110 mx-auto md:mx-0"
           style={{

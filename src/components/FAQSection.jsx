@@ -21,15 +21,14 @@ const faqs = [
 
 const FAQSection = () => (
 	<section
-		className="max-w-7xl mx-auto py-10 md:py-14 px-2 sm:px-4"
-		style={{ fontFamily: "Lexend, sans-serif" }}
+		className="max-w-7xl mx-auto py-10 md:py-14 px-2 sm:px-4 font-['Lexend',sans-serif]"
 	>
 		{/* Section Title */}
 		<h2 className="text-2xl md:text-4xl font-bold mb-2 md:mb-3 lg:mb-2 flex flex-wrap items-end gap-x-2">
-			<span style={{ color: neon }}>Frequently</span>
+			<span className="text-[#C7FF00]">Frequently</span>
 			<span className="text-white">Asked Questions</span>
 		</h2>
-		<p className="text-[#BFBFBF] mb-8 md:mb-10 text-sm md:text-base font-normal" style={{ fontFamily: "Lexend, sans-serif" }}>
+		<p className="text-[#BFBFBF] mb-8 md:mb-10 text-sm md:text-base font-normal">
 			Still you have any questions? Contact our Team via support@yourbank.com
 		</p>
 		{/* FAQ Cards */}
@@ -37,16 +36,12 @@ const FAQSection = () => (
 			{faqs.map((faq, i) => (
 				<div
 					key={i}
-					className="rounded-[14px] bg-[#181A1B] border border-[#262626] p-6 md:p-7 flex flex-col shadow"
-					style={{
-						minHeight: 160,
-						boxShadow: "0 1px 8px #0002",
-					}}
+					className="rounded-[14px] bg-[#181A1B] border border-[#262626] p-6 md:p-7 flex flex-col shadow min-h-[160px]"
 				>
-					<h3 className="text-white text-base md:text-lg font-semibold mb-3 text-left" style={{ fontFamily: "Lexend, sans-serif" }}>
+					<h3 className="text-white text-base md:text-lg font-semibold mb-3 text-left">
 						{faq.q}
 					</h3>
-					<p className="text-[#BFBFBF] text-sm md:text-base font-normal text-left leading-relaxed" style={{ fontFamily: "Lexend, sans-serif" }}>
+					<p className="text-[#BFBFBF] text-sm md:text-base font-normal text-left leading-relaxed">
 						{faq.a}
 					</p>
 				</div>
@@ -55,13 +50,7 @@ const FAQSection = () => (
 		{/* Load All FAQs Button */}
 		<div className="flex justify-center mt-10 md:mt-12">
 			<button
-				className="rounded-full border border-[#232425] px-6 md:px-8 py-2 text-white bg-[#181A1B] hover:bg-[#232425] flex items-center gap-2 transition text-sm md:text-base"
-				style={{
-					fontWeight: 500,
-					fontSize: "1rem",
-					boxShadow: "0 2px 8px #0002",
-					fontFamily: "Lexend, sans-serif",
-				}}
+				className="rounded-full border border-[#232425] px-6 md:px-8 py-2 text-white bg-[#181A1B] hover:bg-[#232425] flex items-center gap-2 transition text-sm md:text-base font-medium shadow"
 			>
 				Load All FAQ's
 				<svg width="18" height="18" fill="none" viewBox="0 0 20 20">

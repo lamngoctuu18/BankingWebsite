@@ -47,8 +47,8 @@ yarn build
 ## Vai trò các thành viên
 
 - **Lâm Ngọc Tú**: Phát triển giao diện người dùng (UI/UX), xây dựng các component React và xây dựng giao diện HomePage.
-- **Nguyễn Nam Hưng**: Xây dựng giao diện trang About, Login và SignIn.
-- **Trần Trí Duy**: Xây dựng giao diện trang Careers và Security.
+- **Nguyễn Nam Hưng**: Xây dựng giao diện trang Careers, Login và SignIn.
+- **Trần Trí Duy**: Xây dựng giao diện trang About và Security.
 
 ---
 
